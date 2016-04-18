@@ -1,0 +1,15 @@
+insert into employees values (eid_seq.nextval, 'Ratnawati', 'Jl. Raya Sesetan', 'ratna@wati.com', '081234532', 'Cashier', 'Active')
+
+insert into need values (313, 62, 1.3)
+
+insert into product values (product_seq.nextvale, 'Jamur Krispy', 12000)
+
+insert into raw_material values (raw_material_seq.nextval, 'jamur', 20, 'Ounce', 5000, 1001)
+
+insert into selling values (142, 'kpratama', '03-mar-	11', 3, 32000, 'Cash', null)
+
+insert into selling_detail values (142, 318, 1, 0)
+
+insert into supplier values (1001, 'PT. Angkasa Raya', 'Jl. Luas Angkat no 3459', '4567889', 'angkasaraya@ymail.com')
+
+insert into users values ('kpratama', '1234', 'Manager', 'Active')

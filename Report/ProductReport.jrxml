@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ProductReport" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select p.product_name, p.price, r.raw_material_name, r.unit, n.need
+from product p natural join need n join raw_material r on n.raw_material_id = r.raw_material_id]]>
+	</queryString>
+	<field name="PRODUCT_NAME" class="java.lang.String"/>
+	<field name="PRICE" class="java.math.BigDecimal"/>
+	<field name="RAW_MATERIAL_NAME" class="java.lang.String"/>
+	<field name="UNIT" class="java.lang.String"/>
+	<field name="NEED" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="296" y="15" width="185" height="39"/>
+				<textElement>
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Product Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="534" y="15" width="135" height="46"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\UC\\Semester 4\\Database Implementation\\Project Related\\Layout SnackZone\\logo Snack zone5.JPG"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="327" y="32" width="114" height="21"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[PTC lt ug fk 2-27 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="337" y="2" width="95" height="25"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[SnackZone]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="37" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[PRODUCT NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="0" width="121" height="20"/>
+				<textElement/>
+				<text><![CDATA[RAW MATERIAL NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="569" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[NEED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="702" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[UNIT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="37" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{PRODUCT_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="1" width="121" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RAW_MATERIAL_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="569" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{NEED}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{PRICE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="702" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{UNIT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="9" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="9" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="7" splitType="Stretch"/>
+	</summary>
+</jasperReport>
